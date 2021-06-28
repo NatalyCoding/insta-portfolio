@@ -1,3 +1,3 @@
-# Instagram Designer Portfolio
+# Social Media (Instagram, Facebook) Designer Portfolio
 
-created with Bootstrap 5 and SASS
+
