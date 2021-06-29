@@ -16,7 +16,7 @@
             <ul class="navigation">
                 <li><a href="#">Home</a></li>
                 <li><a href="#work">Work</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -36,6 +36,38 @@
     </section>
     <section class="work" id="work">
         <h2>Some Of My Designs</h2>
+        <ul class="filter-menu">
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="instagram">Instagram</li>
+            <li class="list" data-filter="ads">Ads</li>
+            <li class="list" data-filter="fb">Facebook</li>
+            <li class="list" data-filter="cases">Phone cases</li>
+            <li class="list" data-filter="stickers">Stickers</li>
+            <li class="list" data-filter="clothes">Clothes</li>
+        </ul>
+        <div class="product">
+            <div class="itemBox" data-item="instagram"><img src="img/insta1.jpg"></div>
+            <div class="itemBox" data-item="ads"><img src="img/ads1.jpg"></div>
+            <div class="itemBox" data-item="cases"><img src="img/cases1.png"></div>
+            <div class="itemBox" data-item="fb"><img src="img/fb1.jpg"></div>
+            <div class="itemBox" data-item="stickers"><img src="img/stickers1.png"></div>
+            <div class="itemBox" data-item="instagram"><img src="img/insta2.jpg"></div>
+            <div class="itemBox" data-item="ads"><img src="img/ads2.jpg"></div>
+            <div class="itemBox" data-item="cases"><img src="img/cases2.png"></div>
+            <div class="itemBox" data-item="fb"><img src="img/fb2.jpg"></div>
+            <div class="itemBox" data-item="ads"><img src="img/ads4.jpg"></div>
+            <div class="itemBox" data-item="stickers"><img src="img/stickers2.png"></div>
+            <div class="itemBox" data-item="instagram"><img src="img/insta3.jpg"></div>
+            <div class="itemBox" data-item="ads"><img src="img/ads3.jpg"></div>
+            <div class="itemBox" data-item="cases"><img src="img/cases3.png"></div>
+            <div class="itemBox" data-item="stickers"><img src="img/stickers3.png"></div>
+            <div class="itemBox" data-item="clothes"><img src="img/clothes1.png"></div>
+            <div class="itemBox" data-item="instagram"><img src="img/insta4.jpg"></div>
+            <div class="itemBox" data-item="instagram"><img src="img/insta5.jpg"></div>
+            <div class="itemBox" data-item="clothes"><img src="img/clothes2.png"></div>
+            <div class="itemBox" data-item="instagram"><img src="img/insta6.jpg"></div>
+            <div class="itemBox" data-item="ads"><img src="img/ads5.jpg"></div>
+        </div>
     </section>
     <section class="about" id="about">
         <h2>My Favourite Social Media are:</h2>
@@ -57,6 +89,32 @@
             const navigation = document.querySelector('.navigation');
             toggleMenu.classList.toggle('active');
             navigation.classList.toggle('active');
+        }
+
+        let list = document.querySelectorAll('.list');
+        let itemBox = document.querySelectorAll('.itemBox');
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function() {
+                for (let j = 0; j < list.length; j++) {
+                    list[j].classList.remove('active');
+                }
+
+                this.classList.add('active');
+
+
+                let dataFilter = this.getAttribute('data-filter');
+
+                for (let k = 0; k < itemBox.length; k++) {
+                    itemBox[k].classList.remove('active');
+                    itemBox[k].classList.add('hide');
+
+                    if (itemBox[k].getAttribute('data-item') == dataFilter || dataFilter == "all") {
+                        itemBox[k].classList.remove('hide');
+                        itemBox[k].classList.add('active');
+                    }
+                }
+            });
         }
     </script>
 </body>
