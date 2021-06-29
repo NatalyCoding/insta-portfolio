@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMM Designer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="top-sec">
+        <header>
+            <a href="#" class="logo">SMD</a>
+            <div class="toggleMenu" onclick="menuToggle();"></div>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBx">
+                <h1>Social Media<br><span>Designer</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <a class="learn-more-btn" href="#work">Learn More</a>
+            </div>
+        </div>
+
+        <img src="img/girl.png" class="girl">
+        <!-- Image Source -->
+        <!-- https://purepng.com/photo/30157/female-woman-using-laptop -->
+    </section>
+    <section class="work" id="work">
+        <h2>Some Of My Designs</h2>
+    </section>
+    <section class="about" id="about">
+        <h2>My Favourite Social Media are:</h2>
+        <div class="box-wrapper">
+            <div class="box">
+                <h3>Facebook</h3>
+            </div>
+            <div class="box">
+                <h3>Instagram</h3>
+            </div>
+            <div class="box">
+                <h3>LinkedIn</h3>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function menuToggle() {
+            const toggleMenu = document.querySelector('.toggleMenu');
+            const navigation = document.querySelector('.navigation');
+            toggleMenu.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
